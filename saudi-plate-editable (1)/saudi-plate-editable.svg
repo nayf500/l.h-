@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="110" viewBox="0 0 520 110">
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eeeeec"/>
+    </linearGradient>
+  </defs>
+  <!-- Saudi-style vehicle plate: editable vector elements -->
+  <rect x="2" y="2" width="516" height="106" rx="6" fill="url(#plate)" stroke="#777" stroke-width="3"/>
+  <line x1="345" y1="3" x2="345" y2="107" stroke="#777" stroke-width="1.5"/>
+  <line x1="105" y1="3" x2="105" y2="107" stroke="#777" stroke-width="1.5"/>
+
+  <!-- Numbers -->
+  <g font-family="Arial, Tahoma, sans-serif" text-anchor="middle" fill="#111">
+    <text id="arabic-numbers" x="52" y="53" font-size="30" font-weight="700">٨٨٤</text>
+    <text id="latin-numbers" x="52" y="82" font-size="20" font-weight="700">884</text>
+  </g>
+
+  <!-- Saudi emblem area -->
+  <g transform="translate(225 24)" fill="#111">
+    <!-- palm -->
+    <path d="M0 27 C-10 19 -18 18 -25 20 C-18 13 -8 13 0 17 C-6 8 -5 2 0 0 C5 2 6 8 0 17 C8 13 18 13 25 20 C18 18 10 19 0 27Z"/>
+    <!-- crossed swords -->
+    <path d="M-28 31 L-3 23 L-1 27 L-25 35 Z M28 31 L3 23 L1 27 L25 35 Z"/>
+    <rect x="-1.5" y="25" width="3" height="12" rx="1"/>
+  </g>
+  <text x="225" y="69" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="9" font-weight="700">السعودية</text>
+  <text x="225" y="83" text-anchor="middle" font-family="Arial,sans-serif" font-size="8">KSA</text>
+
+  <!-- Arabic letters -->
+  <g font-family="Tahoma,Arial,sans-serif" text-anchor="middle" fill="#111">
+    <text id="arabic-letters" x="423" y="53" font-size="30" font-weight="700">ع ع ب</text>
+    <text id="latin-letters" x="423" y="82" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="3">BEV</text>
+  </g>
+</svg>
