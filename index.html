@@ -1,0 +1,25 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>مزاد مسارك</title><link rel="stylesheet" href="styles.css"></head><body>
+<div class="app">
+<header><div class="brand"><div class="logo">مسارك<small>مزاد</small></div><div><h1>مزاد مسارك للوحات المميزة</h1><p>منصة عرض وبيع اللوحات المميزة بالمزاد</p></div></div><button id="open">إدارة اللوحة والمزاد</button></header>
+<main>
+<section class="hero"><div class="timerCard"><span>● متبقي على المزاد</span><div id="timer">01:00</div><i><b id="bar"></b></i><small>جاهز للبدء</small><div class="actions"><button id="a1">+ دقيقة</button><button id="pause">⏸ إيقاف مؤقت</button><button id="a2">+ دقيقتين</button><button id="reset">↻ إعادة ضبط</button></div></div>
+<div class="current"><strong>✓ تم البيع</strong><h2>اللوحة الحالية</h2><p>رقم اللوحة <b id="curPlate">ع ع ب 884</b></p><p>السعر <b id="curPrice">5,000 ريال</b></p><p>نوع اللوحة <b>خصوصي</b></p><p>حالة المزاد <b class="green">نشط</b></p></div></section>
+<div class="contact">☎ <u>0536111885</u> للتواصل</div><div class="title">★ - لوحة رقم: <b id="title">ع ع ب - 884</b> - ★</div>
+<div class="price"><b id="bigPrice">5,000</b> ريال</div>
+
+<section class="plate">
+<div class="numbers"><b id="numAr">٨٨٤</b><small id="numEn">884</small></div>
+<div class="emblem"><span>♣</span><b>السعودية</b><small>KSA</small></div>
+<div class="letters"><b id="letAr">ع ع ب</b><small id="letEn">BEV</small></div>
+</section>
+
+<div class="note"><b>اللهم صل وسلم وبارك على نبينا محمد</b><small>صلى الله عليه وسلم، سبحان الله وبحمده، سبحان الله العظيم.</small><em>عمولة المزاد 250 ريال</em></div>
+<div class="commission"><b>العمولة على دمة البائع للمبيعات عن طريق الشات:</b><br>العمولة 250 ريال على البيع، وفي حال تجاوز إجمالي المبيعات 25,000 ريال تُحسب عمولة بنسبة 1.5%.</div>
+<div class="commentsTitle">تعليقات المعتمدين ●</div><div class="comments"><p>محمد — تمت مراجعة بيانات اللوحة.</p><p>عبدالله — اللوحة جاهزة للمزاد.</p></div>
+</main></div>
+
+<div id="modal" class="modal hidden"><div class="editor"><button id="close">×</button><h2>تعديل اللوحة</h2><p>اللوحة مبنية كعناصر قابلة للتعديل وليست صورة ثابتة.</p>
+<div class="grid"><label>حرف 1<input id="a" value="ع" maxlength="1"></label><label>حرف 2<input id="b" value="ع" maxlength="1"></label><label>حرف 3<input id="c" value="ب" maxlength="1"></label><label>الأرقام<input id="n" value="884" maxlength="4"></label><label>الإنجليزي<input id="e" value="BEV" maxlength="3"></label><label>السعر<input id="p" value="5000" type="number"></label></div>
+<div class="preview"><div><b id="mn">٨٨٤</b><small>884</small></div><div>♣<small>السعودية</small><em>KSA</em></div><div><b id="ma">ع ع ب</b><small id="me">BEV</small></div></div>
+<button id="save">حفظ وتحديث اللوحة</button></div></div>
+<script src="app.js"></script></body></html>
