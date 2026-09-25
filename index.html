@@ -1,92 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لوحة سعودية قابلة للتعديل</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saudi Plate</title>
+<style>
+  body{margin:0;background:#fff;font-family:Tahoma,Arial,sans-serif}
+  .plate-container{width:min(100%,1100px);margin:20px auto;padding:10px}
+  .saudi-plate{display:block;width:100%;height:auto}
+</style>
 </head>
 <body>
-<div class="demo">
-  <h2>لوحة السيارة السعودية — قابلة للتعديل</h2>
-
-  <div class="plate-wrap">
-    <svg id="saudiPlate" viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#ffffff"/>
-          <stop offset="100%" stop-color="#e9e9e7"/>
-        </linearGradient>
-        <filter id="shadow">
-          <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity=".25"/>
-        </filter>
-      </defs>
-
-      <rect x="4" y="4" width="892" height="182" rx="10"
-            fill="url(#metal)" stroke="#777" stroke-width="5" filter="url(#shadow)"/>
-      <line x1="185" y1="6" x2="185" y2="184" stroke="#777" stroke-width="2"/>
-      <line x1="635" y1="6" x2="635" y2="184" stroke="#777" stroke-width="2"/>
-      <line x1="810" y1="6" x2="810" y2="184" stroke="#777" stroke-width="2"/>
-
-      <text id="arabicNumbers" x="92" y="83" text-anchor="middle" direction="rtl"
-            font-family="Tahoma,Arial,sans-serif" font-size="54" font-weight="700" fill="#111">٨٨٤</text>
-      <text id="englishNumbers" x="92" y="140" text-anchor="middle"
-            font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#111">884</text>
-
-      <g transform="translate(410 36)" fill="#111">
-        <path d="M0 48 C-17 33 -35 32 -51 38 C-38 23 -20 22 0 29 C-12 13 -10 4 0 0 C10 4 12 13 0 29 C20 22 38 23 51 38 C35 32 17 33 0 48Z"/>
-        <path d="M-58 57 L-7 43 L-4 51 L-52 66 Z"/>
-        <path d="M58 57 L7 43 L4 51 L52 66 Z"/>
-        <rect x="-4" y="47" width="8" height="25" rx="3"/>
-      </g>
-      <text x="410" y="125" text-anchor="middle" font-family="Tahoma,Arial,sans-serif"
-            font-size="18" font-weight="700" fill="#111">السعودية</text>
-      <text x="410" y="153" text-anchor="middle" font-family="Arial,sans-serif"
-            font-size="16" font-weight="700" letter-spacing="5" fill="#111">KSA</text>
-
-      <text id="arabicLetters" x="722" y="83" text-anchor="middle" direction="rtl"
-            font-family="Tahoma,Arial,sans-serif" font-size="54" font-weight="700" fill="#111">ع ع ب</text>
-      <text id="englishLetters" x="722" y="140" text-anchor="middle"
-            font-family="Arial,sans-serif" font-size="38" font-weight="700"
-            letter-spacing="7" fill="#111">E E B</text>
-
-      <g transform="translate(855 23)">
-        <path d="M0 30 C-8 22 -16 21 -23 25 C-16 16 -8 16 0 20 C-5 11 -4 5 0 2 C4 5 5 11 0 20 C8 16 16 16 23 25 C16 21 8 22 0 30Z" fill="#111"/>
-        <path d="M-25 36 L-4 30 L-2 34 L-22 41Z M25 36 L4 30 L2 34 L22 41Z" fill="#111"/>
-        <text x="0" y="72" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700">K</text>
-        <text x="0" y="91" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700">S</text>
-        <text x="0" y="110" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700">A</text>
-        <circle cx="0" cy="137" r="7" fill="#222"/>
-      </g>
-
-      <g opacity=".75">
-        <rect x="650" y="160" width="135" height="17" rx="4" fill="#d6a900"/>
-        <text x="717" y="172" text-anchor="middle" font-family="Arial"
-              font-size="9" font-weight="700">DEMO / WEBSITE</text>
-      </g>
-    </svg>
+  <div class="plate-container">
+    <img class="saudi-plate"
+         src="saudi-plate.png"
+         alt="لوحة سيارة سعودية - نموذج للموقع">
   </div>
-
-  <div class="editor">
-    <h3>تعديل بيانات اللوحة</h3>
-    <div class="fields">
-      <label>
-        الحروف العربية
-        <input id="lettersAr" value="ع ع ب" maxlength="7">
-      </label>
-      <label>
-        الحروف الإنجليزية <span>(تتغير تلقائيًا)</span>
-        <input id="lettersEn" value="E E B" readonly>
-      </label>
-      <label>
-        الأرقام
-        <input id="numbers" value="884" maxlength="4" inputmode="numeric">
-      </label>
-    </div>
-    <div id="mappingInfo"></div>
-    <button id="download">حفظ اللوحة كـ SVG</button>
-  </div>
-</div>
-<script src="script.js"></script>
 </body>
 </html>
