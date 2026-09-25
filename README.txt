@@ -1,0 +1,1 @@
+ملف saudi-plate-editable.svg لوحة متجهة قابلة للتعديل. افتح plate-editor.html لتعديل الحروف والأرقام ثم حفظ نسخة SVG.
