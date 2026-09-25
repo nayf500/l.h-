@@ -3,31 +3,61 @@ const arabicDigits = {
   "5":"٥","6":"٦","7":"٧","8":"٨","9":"٩"
 };
 
+/*
+  التحويل المستخدم في لوحات المركبات السعودية:
+  ا=A، ب=B، ح=J، د=D، ر=R، س=S، ص=X، ط=T،
+  ع=E، ق=G، ك=K، ل=L، م=Z، ن=N، هـ=H، و=U، ى=V
+*/
+const plateLetterMap = {
+  "ا":"A","أ":"A","إ":"A","آ":"A",
+  "ب":"B",
+  "ح":"J",
+  "د":"D",
+  "ر":"R",
+  "س":"S",
+  "ص":"X",
+  "ط":"T",
+  "ع":"E",
+  "ق":"G",
+  "ك":"K",
+  "ل":"L",
+  "م":"Z",
+  "ن":"N",
+  "ه":"H","هـ":"H",
+  "و":"U",
+  "ى":"V","ي":"V"
+};
+
 const $ = id => document.getElementById(id);
 
 function toArabicNumbers(value){
-  return String(value).split("")
-    .map(char => arabicDigits[char] || char)
-    .join("");
+  return String(value).split("").map(c => arabicDigits[c] || c).join("");
+}
+
+function arabicToEnglish(text){
+  // إزالة المسافات وتحويل كل حرف عربي إلى الحرف اللاتيني المقابل.
+  const chars = text.replace(/\s+/g,"").split("");
+  return chars.map(ch => plateLetterMap[ch] || "?").join(" ");
 }
 
 function updatePlate(){
-  let ar = $("lettersAr").value.trim() || "ع ع ب";
-  let num = $("numbers").value.replace(/\D/g,"").slice(0,4) || "884";
-  let en = $("lettersEn").value
-    .toUpperCase()
-    .replace(/[^A-Z]/g,"")
-    .slice(0,3) || "BEV";
+  const ar = $("lettersAr").value.trim() || "ع ع ب";
+  const num = $("numbers").value.replace(/\D/g,"").slice(0,4) || "884";
+  const en = arabicToEnglish(ar);
 
   $("arabicLetters").textContent = ar;
+  $("englishLetters").textContent = en;
+  $("lettersEn").value = en;
+
   $("arabicNumbers").textContent = toArabicNumbers(num);
   $("englishNumbers").textContent = num;
-  $("englishLetters").textContent = en;
+
+  $("mappingInfo").textContent =
+    "التحويل التلقائي: " + ar.replace(/\s+/g," ") + "  ←  " + en;
 }
 
-["lettersAr","numbers","lettersEn"].forEach(id => {
-  $(id).addEventListener("input", updatePlate);
-});
+$("lettersAr").addEventListener("input", updatePlate);
+$("numbers").addEventListener("input", updatePlate);
 
 $("download").addEventListener("click", () => {
   updatePlate();
@@ -39,9 +69,11 @@ $("download").addEventListener("click", () => {
     '<?xml version="1.0" encoding="UTF-8"?>\n' +
     new XMLSerializer().serializeToString(svg);
 
-  const blob = new Blob([source], {type:"image/svg+xml;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
+  const blob = new Blob([source], {
+    type:"image/svg+xml;charset=utf-8"
+  });
 
+  const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
   a.download = "saudi-plate-demo.svg";
